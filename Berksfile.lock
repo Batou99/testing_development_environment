@@ -1,0 +1,90 @@
+{
+  "sources": {
+    "apt": {
+      "locked_version": "1.9.0"
+    },
+    "elixir": {
+      "locked_version": "0.2.0"
+    },
+    "oh-my-zsh": {
+      "locked_version": "0.3.3",
+      "git": "git://github.com/tiokksar/chef-oh-my-zsh-solo.git",
+      "ref": "7b4058e97f1fc7f4510e79d619437b7cc1a0e0a9"
+    },
+    "rvm": {
+      "locked_version": "0.9.1",
+      "git": "git://github.com/fnichol/chef-rvm.git",
+      "ref": "26ad5c043c70ea98855a049fbbacb7ffc5ad73e3"
+    },
+    "console-development": {
+      "locked_version": "0.1.2",
+      "git": "http://github.com/Batou99/console-development",
+      "ref": "0a4beb076a8439c4879f20a701d035940c52548c"
+    },
+    "chromedriver": {
+      "locked_version": "0.3.4",
+      "git": "git://github.com/RallySoftware-cookbooks/chromedriver.git",
+      "ref": "ecbf6b0bbcb34f413d445e056ef86cc9209a7405"
+    },
+    "nodejs": {
+      "locked_version": "1.3.0"
+    },
+    "sudo": {
+      "locked_version": "2.3.0"
+    },
+    "mysql": {
+      "locked_version": "4.0.4"
+    },
+    "mongodb": {
+      "locked_version": "0.13.7"
+    },
+    "imagemagick": {
+      "locked_version": "0.2.2"
+    },
+    "git": {
+      "locked_version": "2.9.0"
+    },
+    "dmg": {
+      "locked_version": "2.1.4"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "windows": {
+      "locked_version": "1.12.8"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.4.0"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    },
+    "yum-epel": {
+      "locked_version": "0.2.0"
+    },
+    "erlang": {
+      "locked_version": "1.4.2"
+    },
+    "yum-erlang_solutions": {
+      "locked_version": "0.1.4"
+    },
+    "zsh": {
+      "locked_version": "1.0.0"
+    },
+    "java": {
+      "locked_version": "1.19.2"
+    },
+    "chef_gem": {
+      "locked_version": "0.1.0"
+    },
+    "openssl": {
+      "locked_version": "1.1.0"
+    },
+    "python": {
+      "locked_version": "1.4.6"
+    }
+  }
+}
