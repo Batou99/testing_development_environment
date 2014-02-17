@@ -20,6 +20,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: "33.33.33.20"
 
+  config.vm.network :forwarded_port, host: 3000, guest: 3000
+  config.vm.network :forwarded_port, host: 4000, guest: 4000
+  config.vm.network :forwarded_port, host: 9000, guest: 9000
+  config.vm.network :forwarded_port, host: 9999, guest: 9999
+
+  config.vm.synced_folder "/home/#{ENV['USER']}/projects/codebase", "/home/vagrant/codebase"
+
   config.vm.provider :virtualbox do |box|
     box.customize ["modifyvm", :id, "--cpus", "2"]
     box.customize ["modifyvm", :id, "--memory", "2048"]
@@ -28,8 +35,6 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "src/", "/home/vagrant/src"
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
-
-  config.vm.provision "shell", inline: "apt-get -y install ia32-libs libglib2.0-dev libnss3 libgvc5 libgtkmm-3.0 libnotify4"
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "apt"
@@ -44,8 +49,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "mysql"
     chef.add_recipe "mysql::server"
     chef.add_recipe "mysql::ruby"
-    chef.add_recipe "imagemagick::devel"
-    chef.add_recipe "imagemagick::rmagick"
     chef.json = {
       authorization: {
         :sudo => {
@@ -72,6 +75,13 @@ Vagrant.configure("2") do |config|
         'server_debian_password' => 'howareyou'
       }
     }
+  end
+
+  config.vm.provision "shell", inline: "apt-get -y install ia32-libs"
+  config.vm.provision "shell", inline: "apt-get -y install libglib2.0-dev libnss3 libgvc5 libgtkmm-3.0 libnotify4"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "imagemagick::rmagick"
   end
 
   if File.exists?(File.join(Dir.home, ".ssh", "id_rsa"))

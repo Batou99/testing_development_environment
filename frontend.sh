@@ -3,6 +3,8 @@ then
   echo 'ticckle_frontend repository exists, skipping initialization'
 else
   echo 'Setting up ticckle_frontend repository'
+  mkdir codebase
+  cd codebase
   git clone git@github.com:ticckle/ticckle_frontend.git
   cd ticckle_frontend
   git fetch

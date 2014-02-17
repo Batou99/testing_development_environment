@@ -2,6 +2,7 @@ if [ -d "ticckle_backend" ]
 then
   echo 'ticckle_backend repository exists, skipping initialization'
 else
+  cd codebase
   echo 'Setting up ticckle_backend repository'
   source ~/.rvm/scripts/rvm
   git clone git@github.com:ticckle/ticckle_backend.git
