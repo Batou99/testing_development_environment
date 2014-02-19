@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, host: 9000, guest: 9000
   config.vm.network :forwarded_port, host: 9999, guest: 9999
 
-  config.vm.synced_folder "/home/#{ENV['USER']}/projects/codebase", "/home/vagrant/codebase"
+  config.vm.synced_folder "~/projects/codebase", "/home/vagrant/codebase"
 
   config.vm.provider :virtualbox do |box|
     box.customize ["modifyvm", :id, "--cpus", "2"]
@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: "apt-get -y install ia32-libs"
-  config.vm.provision "shell", inline: "apt-get -y install libglib2.0-dev libnss3 libgvc5 libgtkmm-3.0 libnotify4"
+  config.vm.provision "shell", inline: "apt-get -y install libglib2.0-dev libnss3 libgvc5 libgtkmm-3.0 libnotify4 xvfb"
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "imagemagick::rmagick"
