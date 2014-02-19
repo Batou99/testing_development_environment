@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: "apt-get -y install ia32-libs"
-  config.vm.provision "shell", inline: "apt-get -y install libglib2.0-dev libnss3 libgvc5 libgtkmm-3.0 libnotify4 xvfb"
+  config.vm.provision "shell", inline: "apt-get -y install libglib2.0-dev libnss3 libgvc5 libgtkmm-3.0 libnotify4 xvfb firefox"
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "imagemagick::rmagick"
