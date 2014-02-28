@@ -9,7 +9,7 @@ else
   git clone git@github.com:ticckle/ticckle_backend.git
   cd ticckle_backend
   git fetch
-  git checkout develop
+  git checkout feature/specs
   gem install bundler
   bundle install
 fi

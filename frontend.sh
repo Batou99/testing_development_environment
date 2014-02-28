@@ -9,7 +9,7 @@ else
   git clone git@github.com:ticckle/ticckle_frontend.git
   cd ticckle_frontend
   git fetch
-  git checkout develop
+  git checkout feature/spec
   gem install compass
   gem install sass
   npm install
